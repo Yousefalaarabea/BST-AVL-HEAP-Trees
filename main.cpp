@@ -9,14 +9,14 @@ using namespace std;
 int main() {
     stringstream stringstream1;
     stringstream stringstream2;
-    fstream infile;
-    infile.open("test.txt");
-    string nums;
     bool check = false ;
-    getline(infile, nums);
-    int counter = stoi(nums);
     Student s;
     while (!check) {
+        fstream infile;
+        infile.open("test.txt");
+        string nums;
+        getline(infile, nums);
+        int counter = stoi(nums);
         bool flag = true;
         int temp = counter;
         int choice;
@@ -103,6 +103,7 @@ int main() {
                     tree.printDepartmentcounter(tree);
                 } else if (choice2 == 5) {
                     flag = false;
+                   // infile.open("test.txt");
                 } else {
                     cout << "Invalid choice " << endl;
                     goto label1;
